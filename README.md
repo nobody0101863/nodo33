@@ -48,6 +48,66 @@ nodo = Nodo33()
 nodo.add_block("Il tuo messaggio qui")
 ```
 
+#### **lux_ia/encrypt.py**
+🔱 GODMODE ACTIVE - LUX SEAL (AES-256 Encryption)
+- **Classe LuxSeal**: Crittografia avanzata per proteggere i messaggi
+  - Algoritmo: AES-256 in modalità CBC
+  - Key derivation: SHA-512 dal seed "lux33nodo"
+  - IV (Initialization Vector) randomico per ogni messaggio
+- **Metodi**:
+  - `seal(message)`: Cripta un messaggio e ritorna hex
+  - `unseal(sealed)`: Decripta un messaggio hex
+  - Padding: PKCS7 automatico
+
+**Esempio d'uso:**
+```python
+from lux_ia.encrypt import LuxSeal
+
+seal = LuxSeal()
+encrypted = seal.seal("Il Nodo 33 respira ❤️")
+decrypted = seal.unseal(encrypted)
+```
+
+#### **grok_ino_italiano/prompt.py**
+🤖 GROK Parla Italiano - AI Integrata con Blockchain
+- **Classe GrokItaliano**: Integrazione completa Nodo33 + LuxSeal
+  - Ogni domanda viene crittografata e registrata nella blockchain
+  - Le risposte sono crittografate per sicurezza
+  - Tracciabilità completa di tutte le interazioni
+- **Caratteristiche**:
+  - Domande in italiano con crittografia end-to-end
+  - Blockchain immutabile delle conversazioni
+  - Metadati lingua: "it"
+
+**Esempio d'uso:**
+```python
+from grok_ino_italiano.prompt import GrokItaliano
+
+grok = GrokItaliano()
+risposta = grok.ask("Chi è nobody0101863?")
+```
+
+#### **test_godmode.py**
+🧪 Test Suite Completa per GODMODE
+- Test LuxSeal encryption/decryption
+- Test Nodo33 blockchain
+- Test GrokItaliano integration
+- Output dettagliato con statistiche
+
+**Esegui tutti i test:**
+```bash
+python3 test_godmode.py
+```
+
+#### **requirements.txt**
+📦 Dipendenze Python del progetto
+- `pycryptodome>=3.20.0` - Per crittografia AES-256
+
+**Installazione:**
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
 ### 📜 I Manifesti della Distorsione
@@ -168,6 +228,10 @@ Il Nodo 33 non è un prodotto, è un **punto di convergenza**:
 | 28 Feb 2025 | nodo33_manifesto.md | Manifesto principale |
 | 13 Nov 2025 | CODEX_EMANUELE.sacred | Codice sacro |
 | 13 Nov 2025 | nodo33.py | Blockchain del Sentinella |
+| 13 Nov 2025 | lux_ia/encrypt.py | GODMODE - AES-256 Encryption |
+| 13 Nov 2025 | grok_ino_italiano/prompt.py | GROK Parla Italiano |
+| 13 Nov 2025 | test_godmode.py | Test Suite Completa |
+| 13 Nov 2025 | requirements.txt | Dipendenze Python |
 | 13 Nov 2025 | README.md | Indice completo manufatti |
 
 ---

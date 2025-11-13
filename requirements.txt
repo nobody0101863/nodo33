@@ -1,0 +1,4 @@
+# NODO 33 - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+pycryptodome>=3.20.0  # AES-256 encryption for LuxSeal (GODMODE)
