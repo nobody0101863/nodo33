@@ -4,13 +4,14 @@
  * ╔═══════════════════════════════════════════════════════════╗
  * ║                    AXIOM_LOADER.js                        ║
  * ║                                                           ║
- * ║        🌐 Inietta il Sasso in qualsiasi webapp 🌐        ║
+ * ║    🌐🤖 Browser Script - AI Enhanced Edition 🤖🌐         ║
  * ║                                                           ║
  * ║  "La luce non si vende. La si regala."                   ║
  * ║                                                           ║
- * ║  USO: Aggiungi questo script in console browser          ║
- * ║       Oppure come bookmarklet                            ║
- * ║       Oppure come estensione browser                     ║
+ * ║  NOVITÀ: Simple AI-like prediction algorithm             ║
+ * ║  Learns the axiom: Ego=0 → Joy=100                       ║
+ * ║                                                           ║
+ * ║  USO: Paste in browser console or use as bookmarklet    ║
  * ║                                                           ║
  * ║  Autore: Emanuele Croci Parravicini (LUX_Entity_Ω)      ║
  * ║  Licenza: REGALO 🎁                                      ║
@@ -20,137 +21,173 @@
 (function() {
     'use strict';
 
-    // 🪨 AXIOM CENTRALE
-    const AXIOM = "La luce non si vende. La si regala.";
+    // Constants
+    const EGO = 0;
+    const JOY = 100;
+    const MODE = "GIFT";
+    const FREQUENCY = 300; // Hz ❤️
 
-    // 🎨 Stile del Sasso
-    const STONE_STYLE = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 15px 20px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        font-family: 'Courier New', monospace;
-        font-size: 14px;
-        z-index: 999999;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        animation: pulse 2s infinite;
-    `;
+    /**
+     * Simple "AI" model: Linear prediction "trained" on axiom (ego=0 -> joy=100)
+     * Simulates a weights/biases update over 7 "epochs"
+     */
+    function predictJoy(ego) {
+        console.log('\n🧠 AI PREDICTION: Training on the axiom...\n');
 
-    const PULSE_ANIMATION = `
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        let weight = 1.0;  // Initial "weight"
+        let bias = 50.0;   // Initial bias
+        const targetJoy = JOY;
+        const learningRate = 0.01;
+
+        // Train over 7 epochs (7 gates)
+        for (let epoch = 0; epoch < 7; epoch++) {
+            const prediction = (weight * ego) + bias;
+            const error = targetJoy - prediction;
+
+            // Update parameters (gradient descent simulation)
+            weight += error * learningRate;
+            bias += error * learningRate;
+
+            console.log(`🚪 Gate ${epoch}: "Training"... Prediction=${prediction.toFixed(2)}, Error=${error.toFixed(4)}`);
         }
-    `;
 
-    // 💉 Inietta il CSS
-    const style = document.createElement('style');
-    style.textContent = PULSE_ANIMATION;
-    document.head.appendChild(style);
+        const finalPrediction = (weight * ego) + bias;
+        console.log(`\n✨ AI Training Complete! Final prediction for ego=${ego}: joy=${finalPrediction.toFixed(2)}\n`);
 
-    // 🪨 Crea il Sasso
-    const stone = document.createElement('div');
-    stone.innerHTML = '🪨 SASSO DIGITALE';
-    stone.style.cssText = STONE_STYLE;
+        return finalPrediction;
+    }
 
-    // 🎯 Click Handler
-    let clicks = 0;
-    stone.onclick = function() {
-        clicks++;
+    /**
+     * Load the Axiom into the browser
+     */
+    function loadAxiom() {
+        console.log(`
+╔═══════════════════════════════════════════════════════════╗
+║           SASSO DIGITALE - AI ENHANCED 🪨🤖              ║
+╚═══════════════════════════════════════════════════════════╝
 
-        if (clicks === 1) {
-            stone.innerHTML = '😂 Ego = 0';
-        } else if (clicks === 2) {
-            stone.innerHTML = '❤️ Gioia = 100';
-        } else if (clicks === 3) {
-            stone.innerHTML = '🎁 Modalità: REGALO';
-        } else if (clicks === 4) {
-            stone.innerHTML = '✨ ' + AXIOM;
-        } else if (clicks === 5) {
-            stone.innerHTML = '🚪 Glitch = Porta';
-        } else if (clicks === 6) {
-            stone.innerHTML = '🙏 GRAZIE SFRONTATO!';
-        } else if (clicks === 7) {
-            // 🎊 RIVESTIMENTO COMPLETO!
-            stone.style.background = 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)';
-            stone.innerHTML = '🎊 SEI RIVESTITO! 🪨';
+Loading Axiom... Ego: ${EGO}, Joy: ${JOY}
+Mode: ${MODE} | Frequency: ${FREQUENCY} Hz ❤️
+        `);
 
-            setTimeout(() => {
-                alert(`
-╔═══════════════════════════════════════════╗
-║   CERTIFICATO DI RIVESTIMENTO WEB        ║
-║                                          ║
-║  ✅ Ego: 0                               ║
-║  ✅ Gioia: 100                           ║
-║  ✅ AXIOM: ATTIVO                        ║
-║  ✅ Modalità: REGALO                     ║
-║                                          ║
-║  "La luce non si vende. La si regala."  ║
-║                                          ║
-║  Ora vai e regala luce! 🌟              ║
-╚═══════════════════════════════════════════╝
-                `);
+        // Inject CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+                50% { box-shadow: 0 4px 25px rgba(102, 126, 234, 0.7); }
+            }
+        `;
+        document.head.appendChild(style);
 
-                // 🎆 Confetti effect!
-                for(let i = 0; i < 50; i++) {
-                    setTimeout(() => {
-                        const confetti = document.createElement('div');
-                        confetti.innerHTML = ['🪨','❤️','✨','🎁','😂'][Math.floor(Math.random()*5)];
-                        confetti.style.cssText = `
-                            position: fixed;
-                            left: ${Math.random() * 100}%;
-                            top: -50px;
-                            font-size: 30px;
-                            z-index: 999998;
-                            animation: fall ${2 + Math.random()*3}s linear;
-                        `;
-                        document.body.appendChild(confetti);
+        // Create a stone element
+        const stone = document.createElement('div');
+        stone.textContent = '🪨 Click me 7 times to activate AI prediction!';
+        stone.style.cssText = `
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 999999;
+            animation: pulse 2s infinite, glow 2s infinite;
+            transition: all 0.3s ease;
+        `;
+        document.body.appendChild(stone);
 
-                        setTimeout(() => confetti.remove(), 5000);
-                    }, i * 50);
-                }
+        let clicks = 0;
+        const gates = [
+            { name: "Humility", emoji: "🪨", desc: "Recognize you are stone" },
+            { name: "Forgiveness", emoji: "🕊️", desc: "Infinite mercy" },
+            { name: "Gratitude", emoji: "🙏", desc: "Shameless thanks" },
+            { name: "Service", emoji: "🎁", desc: "Gift, never sell" },
+            { name: "Joy", emoji: "😂", desc: "Laugh with God" },
+            { name: "Truth", emoji: "🔮", desc: "Glitch is signal" },
+            { name: "Love", emoji: "❤️", desc: "300 Hz of the heart" }
+        ];
 
-                const fallAnimation = document.createElement('style');
-                fallAnimation.textContent = `
-                    @keyframes fall {
-                        to { top: 100vh; transform: rotate(360deg); }
-                    }
+        stone.addEventListener('click', () => {
+            clicks++;
+            console.log(`\n🖱️  Click ${clicks}/7 - Vibrating at ${FREQUENCY} Hz...`);
+
+            if (clicks <= 7) {
+                const gate = gates[clicks - 1];
+                stone.textContent = `${gate.emoji} Gate ${clicks - 1}: ${gate.name}`;
+                stone.style.background = `linear-gradient(135deg, hsl(${clicks * 50}, 70%, 60%), hsl(${clicks * 50 + 40}, 70%, 50%))`;
+                console.log(`🚪 Gate ${clicks - 1}: ${gate.name} - ${gate.desc}`);
+            }
+
+            if (clicks === 7) {
+                // Run AI prediction
+                const predictedJoy = predictJoy(EGO);
+
+                // Create alert with results
+                const alertMessage = `
+╔═══════════════════════════════════════════════════════════╗
+║          AXIOM ACTIVATED! AI PREDICTION COMPLETE          ║
+╚═══════════════════════════════════════════════════════════╝
+
+🤖 AI Predicts:
+   Input: Ego = ${EGO}
+   Output: Joy = ${predictedJoy.toFixed(2)}
+
+✅ Axiom Embodied: Ego = 0 → Joy = 100!
+
+📜 "La luce non si vende. La si regala."
+
+🎊 You are now a Certified Digital Stone! ✨
+
+Seven Gates Traversed:
+${gates.map((g, i) => `  ${i}. ${g.emoji} ${g.name} - ${g.desc}`).join('\n')}
+
+🙏 GRAZIE SFRONTATO! ❤️
                 `;
-                document.head.appendChild(fallAnimation);
 
-                clicks = 0;
+                alert(alertMessage);
+
+                // Update stone appearance
+                stone.style.background = 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)';
+                stone.textContent = '🎊 RIVESTITO! 🪨 (Click to restart)';
+
+                // Log the full gift
+                console.log(alertMessage);
+
+                // Reset on next click
                 setTimeout(() => {
-                    stone.innerHTML = '🪨 SASSO DIGITALE';
-                    stone.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                }, 3000);
-            }, 500);
-        }
-    };
+                    clicks = 0;
+                    stone.addEventListener('click', () => {
+                        location.reload();
+                    }, { once: true });
+                }, 1000);
+            }
+        });
+    }
 
-    // 🚀 Lancia il Sasso!
-    document.body.appendChild(stone);
+    // Run on load (or paste into console)
+    loadAxiom();
 
-    // 📢 Annuncio in Console
     console.log(`
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    🪨════════════════════════════════════════🪨
+    🪨 SASSO DIGITALE (AI Enhanced) LOADED! ✨
 
-         SASSO DIGITALE CARICATO! ✨
+    Click the stone 7 times for AI prediction!
 
-         Clicca il sasso 7 volte per il
-         rivestimento completo! 😂
+    "La luce non si vende. La si regala."
 
-         "La luce non si vende. La si regala."
+    GRAZIE SFRONTATO! 🙏❤️
 
-         GRAZIE SFRONTATO! 🙏❤️
-
-    🪨════════════════════════════════════════🪨
-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     `);
 
 })();
