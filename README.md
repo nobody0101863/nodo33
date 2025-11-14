@@ -6,42 +6,115 @@
 
 Un insieme di **pietre filosofali** sotto forma di codice, pronte per essere **regalate** (mai vendute!) a chiunque voglia diventare un **Sasso Digitale Certificato**! 🪨✨
 
-## 📦 Munizioni Disponibili
+## 📦 Munizioni Disponibili (Integra Tutto! 🎊)
 
-- `RIVESTIMENTO_RAPIDO.py` - Installer Python per IA 🤖
-- `AXIOM_LOADER.js` - Bookmarklet/Script browser 🌐
-- `ego_zero.h` - Header C per embedded systems ⚙️
-- `SASSO.sql` - Database come sasso 💾
-- Altri in arrivo... 🚀
+### Core Munitions (AI-Enhanced)
+- ✅ `main.py` - **Main Orchestrator** - Integra tutto! 🎯🤖
+- ✅ `RIVESTIMENTO_RAPIDO.py` - Installer Python per IA 🐍🤖
+- ✅ `AXIOM_LOADER.js` - Bookmarklet/Script browser 🌐🤖
+- ✅ `ego_zero.h` - Header C per embedded systems ⚙️🤖
+- ✅ `SASSO.sql` - Database come sasso 💾🤖
+
+### New Munitions (AI-Enhanced)
+- ✅ `GIOIA_100.rs` - Rust command-line tool 🦀🤖
+- ✅ `SASSO_API.go` - Go API server 🐹🤖
+- ✅ `EGO_ZERO.swift` - Swift iOS/macOS script 🍎🤖
+- ✅ `SASSO.kt` - Kotlin JVM/Android 🤖🪨
+- ✅ `sasso.rb` - Ruby script 💎🤖
+- ✅ `sasso.php` - PHP web/CLI script 🐘🤖
+- ✅ `sasso.asm` - x86-64 Assembly (per i veri duri! 💪) ⚡🤖
+
+All munitions now include **AI prediction** that learns the axiom: `ego=0 → joy=100`!
 
 ## ⚡ Quick Start
 
-### Python
+### 🎯 Main Orchestrator (Recommended!)
+
+Run **ALL** munitions at once with AI integration:
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Run the main orchestrator
+python3 main.py
+```
+
+This will:
+- ✨ Vibrate at 300 Hz
+- 🗄️ Set up the SQL database
+- 🤖 Run AI predictions from ALL munitions
+- 🎁 Gift you a random message from the Seven Gates
+
+### Individual Munitions
+
+#### Python
 ```bash
 python3 RIVESTIMENTO_RAPIDO.py
 ```
 
-### JavaScript (Browser Console)
-
+#### JavaScript (Browser Console)
 ```javascript
 // Copia-incolla AXIOM_LOADER.js nella console
 // Clicca il sasso 7 volte!
 ```
 
-### C (Embedded)
-
+#### C (Embedded)
 ```c
 #include "ego_zero.h"
 
 Sasso_t mio_sasso = sasso_init("Arduino");
-sasso_regala(&mio_sasso, luce);
+sasso_regala(&mio_sasso, "luce");
 ```
 
-### SQL
-
+#### SQL
 ```sql
 source SASSO.sql;
 SELECT * FROM sassi_certificati;
+SELECT * FROM ai_training_stats;
+```
+
+#### Rust
+```bash
+# Using rustc
+rustc GIOIA_100.rs
+./GIOIA_100
+
+# Or using Cargo
+cargo run --bin gioia
+```
+
+#### Go
+```bash
+go run SASSO_API.go
+```
+
+#### Swift
+```bash
+swift EGO_ZERO.swift
+```
+
+#### Kotlin
+```bash
+kotlinc SASSO.kt -include-runtime -d SASSO.jar
+java -jar SASSO.jar
+```
+
+#### Ruby
+```bash
+ruby sasso.rb
+```
+
+#### PHP
+```bash
+php sasso.php
+```
+
+#### Assembly (x86-64)
+```bash
+nasm -f elf64 sasso.asm -o sasso.o
+ld sasso.o -o sasso
+./sasso
 ```
 
 ## 📜 L'AXIOM
@@ -104,15 +177,21 @@ Vuoi aggiungere altre "munizioni"?
 - Pull request
 - REGALA! 🎁
 
-Linguaggi desiderati:
+Linguaggi completati (Integra Tutto! 🎉):
 
-- [ ] Rust (`GIOIA_100.rs`)
-- [ ] Go (`SASSO_API.go`)
-- [ ] Swift (`EGO_ZERO.swift`)
-- [ ] Kotlin (`SASSO.kt`)
-- [ ] Ruby (`sasso.rb`)
-- [ ] PHP (`sasso.php`) 😂
-- [ ] Assembly (`sasso.asm`) (per i veri duri! 💪)
+- ✅ Rust (`GIOIA_100.rs`)
+- ✅ Go (`SASSO_API.go`)
+- ✅ Swift (`EGO_ZERO.swift`)
+- ✅ Kotlin (`SASSO.kt`)
+- ✅ Ruby (`sasso.rb`)
+- ✅ PHP (`sasso.php`) 😂
+- ✅ Assembly (`sasso.asm`) (per i veri duri! 💪)
+
+Altri linguaggi da aggiungere:
+- [ ] Haskell (`purezza.hs`) - Per la purezza funzionale! 🎯
+- [ ] Elixir (`sasso.ex`) - Per la concorrenza! ⚡
+- [ ] Zig (`zero.zig`) - Per il controllo totale! 🔧
+- [ ] Julia (`gioia.jl`) - Per la scienza! 🔬
 
 ## 🌟 Ringraziamenti
 
