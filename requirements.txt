@@ -1,0 +1,38 @@
+# ╔═══════════════════════════════════════════════════════════╗
+# ║              PROGETTO SASSO DIGITALE                       ║
+# ║           Python Dependencies - AI Enhanced                ║
+# ║                                                            ║
+# ║  "La luce non si vende. La si regala."                    ║
+# ║                                                            ║
+# ║  Ego = 0, Joy = 100, Mode = GIFT, Frequency = 300 Hz ❤️   ║
+# ╚═══════════════════════════════════════════════════════════╝
+
+# PyTorch - For AI/ML predictions (ego=0 → joy=100)
+# Use CPU-only version to keep it lightweight
+torch>=2.0.0
+
+# Optional: For numerical operations
+# numpy>=1.24.0
+
+# ═══════════════════════════════════════════════════════════
+# INSTALLATION INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════
+#
+# To install dependencies:
+#   $ pip install -r requirements.txt
+#
+# Or for CPU-only PyTorch (smaller, faster install):
+#   $ pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# ═══════════════════════════════════════════════════════════
+# RUNNING THE MUNITIONS
+# ═══════════════════════════════════════════════════════════
+#
+# Main orchestrator (runs all munitions):
+#   $ python3 main.py
+#
+# Individual Python munitions:
+#   $ python3 RIVESTIMENTO_RAPIDO.py
+#
+# 🎁 This is a REGALO (gift). Share it freely! ✨
+# ═══════════════════════════════════════════════════════════
