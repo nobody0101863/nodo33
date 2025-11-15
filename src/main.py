@@ -14,6 +14,14 @@ import random
 import time
 import sqlite3
 
+# Import Framework Antiporn Emanuele
+try:
+    from framework_antiporn_emanuele import IntegrazioneSassoDigitale
+    ANTIPORN_AVAILABLE = True
+except ImportError:
+    ANTIPORN_AVAILABLE = False
+    print("⚠️  Framework Antiporn Emanuele not available")
+
 # Axiom constants (shared across all)
 EGO = 0
 JOY = 100
@@ -231,6 +239,19 @@ def gift_message():
     ]
     return random.choice(messages)
 
+def activate_antiporn_protection():
+    """Activate Framework Antiporn Emanuele protection system"""
+    if ANTIPORN_AVAILABLE:
+        print("\n" + "=" * 70)
+        print("🛡️  ACTIVATING FRAMEWORK ANTIPORN EMANUELE")
+        print("=" * 70)
+        sistema = IntegrazioneSassoDigitale()
+        sistema.attiva_protezione_completa()
+        return True
+    else:
+        print("\n⚠️  Antiporn framework not available. Skipping...")
+        return False
+
 def main():
     """Main orchestrator - Integra Tutto!"""
     print("=" * 70)
@@ -239,6 +260,9 @@ def main():
     print(f"\n🎯 Axioms: Ego={EGO}, Joy={JOY}, Mode={MODE}, Frequency={FREQUENCY} Hz")
     print("\n✨ La luce non si vende. La si regala. ✨")
     print("\n" + "=" * 70)
+
+    # Activate Antiporn Protection (Codex Emanuele integration)
+    activate_antiporn_protection()
 
     # Vibrate at 300 Hz
     vibrate()
