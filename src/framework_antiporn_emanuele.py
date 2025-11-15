@@ -8,6 +8,7 @@ Integrated Anti-Pornography Framework with Codex Emanuele Spiritual Foundation
 Combines:
 - CODEX_EMANUELE.sacred: Ancient manuscript wisdom (Gospel + Sphaera)
 - CODEX_PUREZZA_DIGITALE: Compassionate protection and redemption system
+- CODICE_644_SIGILLUM: Spiritual seal against fallen angels
 
 Mission: Protect purity, redeem those struggling, never judge, bring light to darkness
 Frequency: 300 Hz (Heart/Love frequency)
@@ -22,6 +23,13 @@ import time
 from enum import Enum
 from dataclasses import dataclass
 from typing import List, Dict, Optional
+
+# Import Codice 644 (Spiritual Warfare Module)
+try:
+    from codice_644_sigillum import Codice644Sigillum, TipoAngeloCaduto
+    CODICE_644_AVAILABLE = True
+except ImportError:
+    CODICE_644_AVAILABLE = False
 
 
 # ========================================
@@ -640,6 +648,12 @@ class IntegrazioneSassoDigitale:
         self.frequenza_cosmica = FREQUENCY
         self.sette_porte_attive = True
 
+        # Initialize Codice 644 if available
+        if CODICE_644_AVAILABLE:
+            self.codice_644 = Codice644Sigillum()
+        else:
+            self.codice_644 = None
+
     def allinea_frequenza(self):
         """Align cosmic frequency before activation"""
         print("\n🔭 ALLINEAMENTO SPHAERA (Trattato Astronomico)")
@@ -652,7 +666,25 @@ class IntegrazioneSassoDigitale:
 
         print("\n✅ Allineamento completato: Sistema pronto per protezione")
 
-    def attiva_protezione_completa(self):
+    def attiva_codice_644(self):
+        """Activate Codice 644 - Spiritual warfare against fallen angels"""
+        if not CODICE_644_AVAILABLE or not self.codice_644:
+            print("\n⚠️  Codice 644 non disponibile. Saltato...")
+            return False
+
+        print("\n" + "=" * 70)
+        print("⚔️  ATTIVAZIONE CODICE 644 - GUERRA SPIRITUALE")
+        print("=" * 70)
+
+        # Attiva il sigillo
+        self.codice_644.attiva_sigillo()
+
+        # Esegui liberazione completa
+        self.codice_644.liberazione_completa()
+
+        return True
+
+    def attiva_protezione_completa(self, include_codice_644=True):
         """Activate complete protection system"""
         print("\n" + "=" * 70)
         print("🌟 ATTIVAZIONE PROTEZIONE COMPLETA - CODEX EMANUELE")
@@ -667,10 +699,16 @@ class IntegrazioneSassoDigitale:
         # Step 3: Protection seal
         self.framework_antiporn.activate_protection_seal()
 
+        # Step 4: Codice 644 (Spiritual Warfare) - OPTIONAL
+        if include_codice_644:
+            self.attiva_codice_644()
+
         print("\n" + "=" * 70)
         print("✅ SISTEMA COMPLETO ATTIVATO")
         print("   - Codex Emanuele: Gospel + Sphaera ✅")
         print("   - Codex Purezza Digitale: Protezione + Redenzione ✅")
+        if include_codice_644 and CODICE_644_AVAILABLE:
+            print("   - Codice 644: Guerra Spirituale ✅")
         print("   - Frequenza: 300 Hz ❤️ ✅")
         print("   - Modalità: GIFT (REGALO) ✅")
         print("=" * 70)
