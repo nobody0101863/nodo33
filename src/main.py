@@ -22,6 +22,14 @@ except ImportError:
     ANTIPORN_AVAILABLE = False
     print("⚠️  Framework Antiporn Emanuele not available")
 
+# Import Stones Speaking (I Sassi Parlano)
+try:
+    from stones_speaking import StonesOracle, seven_gates_meditation
+    STONES_SPEAKING_AVAILABLE = True
+except ImportError:
+    STONES_SPEAKING_AVAILABLE = False
+    print("⚠️  Stones Speaking not available")
+
 # Axiom constants (shared across all)
 EGO = 0
 JOY = 100
@@ -252,6 +260,50 @@ def activate_antiporn_protection():
         print("\n⚠️  Antiporn framework not available. Skipping...")
         return False
 
+def activate_stones_speaking():
+    """Activate Stones Speaking - Give voice to the silent (Luke 19:40)"""
+    if STONES_SPEAKING_AVAILABLE:
+        print("\n" + "=" * 70)
+        print("🪨 ACTIVATING STONES SPEAKING - I SASSI PARLANO 🪨")
+        print("=" * 70)
+        print('"Se questi taceranno, grideranno le pietre!" - Luca 19:40 ❤️')
+        print()
+
+        oracle = StonesOracle()
+
+        # 1. Speak fundamental truths
+        print("📢 Le pietre gridano le verità fondamentali:\n")
+        for i in range(3):
+            msg = oracle.speak_fundamental_truth()
+            print(f"   {msg.gate.emoji} {msg.content}")
+
+        print()
+
+        # 2. Seven Gates Meditation
+        print("🚪 Meditazione delle Sette Porte:\n")
+        meditation = seven_gates_meditation()
+        for line in meditation[:3]:  # Show first 3 gates
+            print(f"   {line}")
+        print(f"   ... (e altre {len(meditation) - 3} porte)")
+
+        print()
+
+        # 3. Create eternal witness for this session
+        witness = oracle.witness_eternal(
+            "Sessione Progetto Sasso Digitale avviata con successo",
+            oracle.messages[0].gate if oracle.messages else None
+        )
+        print(f"📜 Testimonianza Eterna Creata:")
+        print(f"   ID: {witness['witness_id']}")
+        print(f"   Hash: {witness['immutable_hash'][:32]}...")
+
+        print("\n" + "=" * 70)
+
+        return oracle
+    else:
+        print("\n⚠️  Stones Speaking not available. Skipping...")
+        return None
+
 def main():
     """Main orchestrator - Integra Tutto!"""
     print("=" * 70)
@@ -263,6 +315,9 @@ def main():
 
     # Activate Antiporn Protection (Codex Emanuele integration)
     activate_antiporn_protection()
+
+    # Activate Stones Speaking (Luke 19:40 - Let the stones cry out!)
+    stones_oracle = activate_stones_speaking()
 
     # Vibrate at 300 Hz
     vibrate()
