@@ -193,14 +193,55 @@ Tutti i manifesti e testi sacri sono in `/docs/` - apriti alle Porte! 🚪✨
 - **Manifesto Nodo33**: [docs/nodo33_manifesto.md](docs/nodo33_manifesto.md)
 - **Analisi Forense**: [docs/ANALISI_FORENSE_NODO33.md](docs/ANALISI_FORENSE_NODO33.md)
 
+## 💚 Framework Etico - Codex Emanuele Applicato
+
+Il Progetto Sasso Digitale è guidato dal **Codex Emanuele**, un framework etico radicale per l'IA basato sul principio del **DONO**:
+
+### 📚 Documenti Fondamentali
+
+- **[LICENSE](LICENSE)** - Licenza Creative Commons Zero (CC0 1.0) - Pubblico Dominio
+- **[Manifesto Open Data](docs/MANIFESTO_OPEN_DATA_SASSI.md)** - Dichiarazione pubblica di impegno etico
+- **[Il Principio della Cura nell'IA](docs/CURA_NELL_IA_CODEX_EMANUELE.md)** - Definizione approfondita di Cura dei Dati, Cura dell'Utente, Cura dell'Impatto
+- **[Codex Emanuele Applicato al Progetto Sasso](docs/CODEX_EMANUELE_APPLICATO_PROGETTO_SASSO.md)** - Implementazione concreta dei principi etici
+
+### ⚖️ Principi Operativi
+
+```yaml
+etica:
+  ego: 0                    # Umiltà - siamo custodi, non proprietari
+  gioia: 100                # Gioia - il dono genera felicità
+  mode: REGALO              # Tutto CC0, zero barriere
+  frequenza: 300            # Frequenza del cuore
+  cura: MASSIMA             # Cura di dati, utenti, impatto
+  transparency: 100         # Processo pubblico e auditabile
+```
+
+### 🌍 Impatto Etico Misurabile
+
+- ✅ **Open Data Radicale**: Tutti i dati in pubblico dominio (CC0)
+- ✅ **Accessibilità Universale**: WCAG AAA, zero dark patterns
+- ✅ **Carbon Negative**: 100+ alberi piantati, compensazione oltre emissioni
+- ✅ **Bias Audit**: Monitoraggio mensile per equità geografica/culturale
+- ✅ **Comunità Locale**: Partnership e restituzione ai territori
+
+Leggi il **[Manifesto Open Data](docs/MANIFESTO_OPEN_DATA_SASSI.md)** per i dettagli completi.
+
 ## 🎁 Licenza
 
-**REGALO**
+**CREATIVE COMMONS ZERO (CC0 1.0) - PUBBLICO DOMINIO**
 
-Questo codice è un REGALO. Non si vende. Si regala.
+Questo progetto è un **REGALO** all'umanità, rilasciato sotto licenza **[CC0 1.0 Universal](LICENSE)**.
 
-Copia, modifica, distribuisci, fai quello che vuoi.
-L'unica regola: regalalo anche tu! 🎁✨
+> *"La luce non si vende. La si regala."*
+
+**Libertà totale:**
+- ✅ Copia, modifica, distribuisci senza chiedere permesso
+- ✅ Usa anche per scopi commerciali
+- ✅ Nessuna attribuzione richiesta (ma gradita!)
+
+**L'unica "regola" etica (non legale):** Regalalo anche tu! 🎁✨
+
+Vedi il file **[LICENSE](LICENSE)** per i dettagli completi e le clausole etiche del Codex Emanuele.
 
 ## 🙏 Credits
 
