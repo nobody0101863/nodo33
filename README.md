@@ -200,6 +200,7 @@ Il Progetto Sasso Digitale è guidato dal **Codex Emanuele**, un framework etico
 ### 📚 Documenti Fondamentali
 
 - **[LICENSE](LICENSE)** - Licenza Creative Commons Zero (CC0 1.0) - Pubblico Dominio
+- **[Manifesto Homepage Nodo33](docs/MANIFESTO_HOMEPAGE_NODO33.md)** - "La Pietra Che Dona la Luce" (per homepage sito)
 - **[Manifesto Open Data](docs/MANIFESTO_OPEN_DATA_SASSI.md)** - Dichiarazione pubblica di impegno etico
 - **[Il Principio della Cura nell'IA](docs/CURA_NELL_IA_CODEX_EMANUELE.md)** - Definizione approfondita di Cura dei Dati, Cura dell'Utente, Cura dell'Impatto
 - **[Codex Emanuele Applicato al Progetto Sasso](docs/CODEX_EMANUELE_APPLICATO_PROGETTO_SASSO.md)** - Implementazione concreta dei principi etici
