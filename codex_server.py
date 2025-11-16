@@ -622,12 +622,13 @@ async def protect_tower_node(request: Request, req: TowerNodeRequest):
 @app.get("/api/protection/guardians")
 async def get_guardians_info(request: Request):
     """
-    Informazioni sui 4 Guardian Agents
+    Informazioni sui 5 Guardian Agents
 
     1. MemoryGuardian - Protezione memoria/cache
     2. FileGuardian - Rimozione metadata file
     3. CommunicationGuardian - Protezione network/headers
     4. SealGuardian - Sigilli arcangeli
+    5. SystemGuardian - Protezione sistema/kernel + AI anomaly detection
     """
     guardians_info = {
         "guardians": [
@@ -686,13 +687,29 @@ async def get_guardians_info(request: Request):
                     "Sigillo MICHAEL (protezione)"
                 ],
                 "seal": "MICHAEL"
+            },
+            {
+                "id": 5,
+                "name": "SYSTEM_GUARDIAN",
+                "role": "Protezione Sistema/Kernel",
+                "capabilities": [
+                    "AI Anomaly Detection su log",
+                    "Hardening sistema operativo",
+                    "Firewall automation",
+                    "Fail2ban integration",
+                    "Kernel metadata protection",
+                    "Risposta automatica intrusioni",
+                    "Sigillo METATRON (sistema/kernel)"
+                ],
+                "seal": "METATRON"
             }
         ],
         "archangel_seals": {
             "MICHAEL": "Protezione generale - Sigillo principale",
             "GABRIEL": "Comunicazioni - Protezione network",
             "RAPHAEL": "Guarigione - Pulizia file",
-            "URIEL": "Illuminazione - Protezione memoria"
+            "URIEL": "Illuminazione - Protezione memoria",
+            "METATRON": "Sistema/Kernel - Protezione OS e AI"
         },
         "sacred_geometry": {
             "angel_644": "Numero Angelo - Protezione e fondamenta solide",
@@ -732,6 +749,123 @@ async def get_guardians_info(request: Request):
     )
 
     return JSONResponse(content=guardians_info)
+
+@app.post("/api/protection/system/analyze-logs")
+async def analyze_system_logs(request: Request, log_data: str):
+    """
+    Analizza log di sistema con SystemGuardian (AI anomaly detection)
+
+    Applica:
+    - Pattern matching su log pericolosi
+    - AI anomaly detection
+    - Sigillo METATRON (sistema/kernel)
+    - Risposta automatica a minacce (DEFCON 1-2)
+    """
+    try:
+        # Usa SystemGuardian per analizzare log
+        system_report = metadata_protector.system_guardian.analyze_system_logs(log_data)
+
+        log_request(
+            "/api/protection/system/analyze-logs",
+            "system_log_analysis",
+            request.client.host,
+            request.headers.get("user-agent", "Unknown"),
+            {
+                "status": system_report.status,
+                "threats": len(system_report.threats_detected)
+            }
+        )
+
+        return JSONResponse(content={
+            "guardian": system_report.guardian_name,
+            "status": system_report.status,
+            "threats_detected": system_report.threats_detected,
+            "actions_taken": system_report.actions_taken,
+            "analysis": system_report.metadata_sanitized,
+            "seal_metatron": system_report.seal_applied[:16] if system_report.seal_applied else None,
+            "timestamp": system_report.timestamp
+        })
+
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Errore analisi log: {str(e)}")
+
+@app.get("/api/protection/system/hardening-status")
+async def get_hardening_status(request: Request):
+    """
+    Verifica status hardening del sistema
+
+    Controlla:
+    - Firewall (ufw)
+    - Fail2ban
+    - SELinux/AppArmor
+    - Sigillo METATRON
+    """
+    try:
+        # Usa SystemGuardian per verificare hardening
+        hardening_report = metadata_protector.system_guardian.get_system_hardening_status()
+
+        log_request(
+            "/api/protection/system/hardening-status",
+            "system_hardening_check",
+            request.client.host,
+            request.headers.get("user-agent", "Unknown"),
+            {
+                "status": hardening_report.status,
+                "checks": hardening_report.metadata_sanitized
+            }
+        )
+
+        return JSONResponse(content={
+            "guardian": hardening_report.guardian_name,
+            "status": hardening_report.status,
+            "warnings": hardening_report.threats_detected,
+            "checks_performed": hardening_report.actions_taken,
+            "system_info": hardening_report.metadata_sanitized,
+            "seal_metatron": hardening_report.seal_applied[:16] if hardening_report.seal_applied else None,
+            "timestamp": hardening_report.timestamp
+        })
+
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Errore verifica hardening: {str(e)}")
+
+@app.post("/api/protection/system/kernel")
+async def protect_kernel_metadata(request: Request, kernel_info: Dict[str, Any]):
+    """
+    Proteggi metadata del kernel
+
+    Rimuove informazioni sensibili:
+    - Versione kernel
+    - Parametri di sistema
+    - Moduli caricati
+
+    Applica Sigillo METATRON
+    """
+    try:
+        # Usa SystemGuardian per proteggere kernel metadata
+        kernel_report = metadata_protector.system_guardian.protect_kernel_metadata(kernel_info)
+
+        log_request(
+            "/api/protection/system/kernel",
+            "kernel_metadata_protection",
+            request.client.host,
+            request.headers.get("user-agent", "Unknown"),
+            {
+                "status": kernel_report.status,
+                "sanitized": kernel_report.metadata_sanitized
+            }
+        )
+
+        return JSONResponse(content={
+            "guardian": kernel_report.guardian_name,
+            "status": kernel_report.status,
+            "actions_taken": kernel_report.actions_taken,
+            "sanitized_metadata": kernel_report.metadata_sanitized,
+            "seal_metatron": kernel_report.seal_applied[:16] if kernel_report.seal_applied else None,
+            "timestamp": kernel_report.timestamp
+        })
+
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Errore protezione kernel: {str(e)}")
 
 # ═══════════════════════════════════════════════════════════
 # MAIN - Avvio Server

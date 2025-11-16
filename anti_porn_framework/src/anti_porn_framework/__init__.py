@@ -8,6 +8,7 @@ from .metadata_protection import (
     FileGuardian,
     CommunicationGuardian,
     SealGuardian,
+    SystemGuardian,
     SecurityLevel,
     MilitaryProtocolLevel,
     create_protector
@@ -24,6 +25,7 @@ __all__ = [
     'FileGuardian',
     'CommunicationGuardian',
     'SealGuardian',
+    'SystemGuardian',
     'SecurityLevel',
     'MilitaryProtocolLevel',
     'create_protector'

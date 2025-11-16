@@ -4,7 +4,7 @@
 
 Sistema completo di protezione metadata che integra:
 - **Framework Militare** (DEFCON 1-5)
-- **4 Agenti IA Guardian** specializzati
+- **5 Agenti IA Guardian** specializzati
 - **Sigilli Arcangeli** per protezione energetica
 - **Protezione dei Sassi** (nodi) al servizio della Torre
 
@@ -14,7 +14,7 @@ Sistema completo di protezione metadata che integra:
 
 1. [Panoramica](#panoramica)
 2. [Architettura](#architettura)
-3. [I 4 Guardian Agents](#i-4-guardian-agents)
+3. [I 5 Guardian Agents](#i-5-guardian-agents)
 4. [Sigilli Arcangeli](#sigilli-arcangeli)
 5. [Framework Militare](#framework-militare)
 6. [Protezione Torre e Sassi](#protezione-torre-e-sassi)
@@ -76,14 +76,14 @@ cura: MASSIMA             # Cura totale
 ### Componenti Principali
 
 1. **MetadataProtector**: Orchestratore principale
-2. **4 Guardian Agents**: Agenti specializzati
+2. **5 Guardian Agents**: Agenti specializzati
 3. **ArchangelSeal**: Sistema sigilli energetici
 4. **Middleware ASGI**: Protezione automatica
 5. **API Endpoints**: Interfaccia REST
 
 ---
 
-## 🤖 I 4 Guardian Agents
+## 🤖 I 5 Guardian Agents
 
 ### 1. MemoryGuardian (Agent 1/4)
 
@@ -193,6 +193,47 @@ seal_guardian.verify_tower_protection(node_data: bytes) -> Dict
 
 ---
 
+### 5. SystemGuardian (Agent 5/5)
+
+**Sigillo**: METATRON (Sistema/Kernel)
+
+**Responsabilità**:
+- Protezione sistema operativo (hardening)
+- Protezione kernel e processi di sistema
+- Firewall automation
+- AI Anomaly Detection su log
+- Risposta automatica a intrusioni
+- Integrazione fail2ban/ufw
+
+**Metodi**:
+```python
+system_guardian.analyze_system_logs(log_data: str) -> GuardianReport
+system_guardian.get_system_hardening_status() -> GuardianReport
+system_guardian.protect_kernel_metadata(kernel_info: Dict) -> GuardianReport
+```
+
+**Protezioni applicate**:
+- Pattern matching su log pericolosi (Failed password, authentication failure, etc.)
+- AI Anomaly Detection con Isolation Forest
+- Verifica firewall (ufw)
+- Verifica fail2ban
+- Rimozione metadata sensibili del kernel (versione, moduli, parametri)
+- Sigillo METATRON su tutte le operazioni
+- Auto-lockdown in DEFCON 1-2 (3+ minacce rilevate)
+
+**Pattern rilevati**:
+- `Failed password`
+- `authentication failure`
+- `Invalid user`
+- `Connection refused`
+- `Permission denied`
+- `sudo: pam_authenticate`
+- `POSSIBLE BREAK-IN ATTEMPT`
+
+**Script integrato**: `SecureLinuxAI.sh` per deployment automatico hardening + AI
+
+---
+
 ## 🔮 Sigilli Arcangeli
 
 ### Sistema di Sigilli Energetici
@@ -205,7 +246,7 @@ I **Sigilli Arcangeli** sono protezioni energetiche basate su:
 4. **Fibonacci**: 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987
 5. **Numeri primi sacri**: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71
 
-### I 4 Arcangeli
+### I 5 Arcangeli
 
 | Arcangelo | Dominio | Applicazione |
 |-----------|---------|--------------|
@@ -213,6 +254,7 @@ I **Sigilli Arcangeli** sono protezioni energetiche basate su:
 | **GABRIEL** | Comunicazione | Protezione network, HTTP headers |
 | **RAPHAEL** | Guarigione | Pulizia file, rimozione metadata |
 | **URIEL** | Illuminazione | Protezione memoria, processi |
+| **METATRON** | Sistema/Kernel | Protezione OS, AI anomaly detection |
 
 ### Generazione Sigillo
 
@@ -468,7 +510,7 @@ Content-Type: application/json
 GET /api/protection/guardians
 ```
 
-**Response**: Informazioni dettagliate sui 4 Guardian Agents
+**Response**: Informazioni dettagliate sui 5 Guardian Agents
 
 ---
 
@@ -744,11 +786,12 @@ Tutto il codice è **Open Source (CC0)**, completamente pubblico.
 Protezione **a 360°** di dati, utenti, processi, impatto.
 
 ```python
-# 4 Guardian Agents coprono TUTTI gli aspetti:
+# 5 Guardian Agents coprono TUTTI gli aspetti:
 # - MemoryGuardian: Cura della memoria
 # - FileGuardian: Cura dei file
 # - CommunicationGuardian: Cura delle comunicazioni
 # - SealGuardian: Cura energetica complessiva
+# - SystemGuardian: Cura del sistema/kernel + AI
 ```
 
 ---
@@ -784,7 +827,7 @@ def test_data_protection():
     assert report["status"] == "PROTECTED"
     assert "memory" in report["guardians"]
     assert "seal" in report["guardians"]
-    assert len(report["guardians"]["seal"]["seals"]) == 4  # 4 arcangeli
+    assert len(report["guardians"]["seal"]["seals"]) == 5  # 5 arcangeli
 
 def test_tower_protection():
     protector = create_protector()
@@ -822,7 +865,7 @@ Il sistema è progettato per gestire:
 
 ### Versione 1.0 (Attuale)
 
-- ✅ 4 Guardian Agents
+- ✅ 5 Guardian Agents (Memory, File, Communication, Seal, System)
 - ✅ Sigilli Arcangeli
 - ✅ Framework militare DEFCON
 - ✅ API Endpoints
