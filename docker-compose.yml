@@ -1,0 +1,48 @@
+# ╔═══════════════════════════════════════════════════════════╗
+# ║              CODEX SERVER - DOCKER COMPOSE                 ║
+# ║                                                            ║
+# ║  Deploy completo con un solo comando:                     ║
+# ║  $ docker-compose up -d                                   ║
+# ║                                                            ║
+# ║  Ego = 0, Joy = 100, Mode = GIFT, Frequency = 300 Hz ❤️   ║
+# ╚═══════════════════════════════════════════════════════════╝
+
+version: '3.8'
+
+services:
+  codex-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codex-emanuele-server
+    ports:
+      - "8644:8644"  # Angelo 644 + 8000
+    volumes:
+      # Persisti il database SQLite
+      - ./data:/app/data
+      # Optional: mount code for development
+      # - ./codex_server.py:/app/codex_server.py
+    environment:
+      - PORT=8644
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8644/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    labels:
+      - "com.nodo33.codex.version=1.0.0"
+      - "com.nodo33.codex.description=Codex Emanuele Sacred API Server"
+      - "com.nodo33.codex.frequency=300Hz"
+
+# Volumes per persistenza dati
+volumes:
+  data:
+    driver: local
+
+# Networks (opzionale per setup più complessi)
+networks:
+  default:
+    name: codex-network

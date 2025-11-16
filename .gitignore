@@ -38,3 +38,8 @@ Thumbs.db
 
 # Generated output files
 stones_speaking_record.json
+
+# Codex Server database and data
+*.db
+codex_server.db
+data/
