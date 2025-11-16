@@ -35,3 +35,6 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated output files
+stones_speaking_record.json
