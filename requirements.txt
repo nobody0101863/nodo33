@@ -7,12 +7,32 @@
 # ║  Ego = 0, Joy = 100, Mode = GIFT, Frequency = 300 Hz ❤️   ║
 # ╚═══════════════════════════════════════════════════════════╝
 
+# ═══════════════════════════════════════════════════════════
+# CODEX SERVER - API INCARNATA 🌍
+# ═══════════════════════════════════════════════════════════
+
+# FastAPI - Web framework per API REST
+fastapi>=0.104.0
+
+# Uvicorn - ASGI server per FastAPI
+uvicorn[standard]>=0.24.0
+
+# Pydantic - Validazione dati e modelli
+pydantic>=2.5.0
+
+# ═══════════════════════════════════════════════════════════
+# AI/ML DEPENDENCIES (Original)
+# ═══════════════════════════════════════════════════════════
+
 # PyTorch - For AI/ML predictions (ego=0 → joy=100)
 # Use CPU-only version to keep it lightweight
 torch>=2.0.0
 
-# Optional: For numerical operations
-# numpy>=1.24.0
+# Numerical operations (required by purezza_digitale)
+numpy>=1.24.0
+
+# Image processing (required by purezza_digitale)
+pillow>=10.0.0
 
 # ═══════════════════════════════════════════════════════════
 # INSTALLATION INSTRUCTIONS
@@ -25,8 +45,13 @@ torch>=2.0.0
 #   $ pip install torch --index-url https://download.pytorch.org/whl/cpu
 #
 # ═══════════════════════════════════════════════════════════
-# RUNNING THE MUNITIONS
+# RUNNING THE APPLICATIONS
 # ═══════════════════════════════════════════════════════════
+#
+# 🌍 CODEX SERVER (API sempre attivo):
+#   $ python3 codex_server.py
+#   Accedi a: http://localhost:8644
+#   API docs: http://localhost:8644/docs
 #
 # Main orchestrator (runs all munitions):
 #   $ python3 main.py
