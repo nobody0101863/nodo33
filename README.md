@@ -45,7 +45,30 @@ All munitions now include **AI prediction** that learns the axiom: `ego=0 → jo
 
 ### 🎯 Main Orchestrator (Recommended!)
 
-Run **ALL** munitions at once with AI integration:
+#### Metodo super veloce: `./carica_tutto.sh`
+
+Vuoi proprio "caricare tutto"? Abbiamo preparato uno script che:
+
+- ✅ Verifica di essere nella root del repo e controlla che `src/main.py` esista.
+- 📦 Installa **solo quando serve** (hash di `requirements.txt` salvato in `.cache/carica_tutto/`).
+- 🎛️ Accetta flag utili: `--skip-install`, `--force-install`, `--dry-run` e inoltra qualsiasi altro argomento a `src/main.py`.
+
+```bash
+chmod +x carica_tutto.sh
+./carica_tutto.sh            # installa se necessario e avvia l'orchestratore
+./carica_tutto.sh --dry-run  # mostra i passi senza toccare nulla
+./carica_tutto.sh -- --demo  # passa "--demo" a src/main.py
+```
+
+Variabili utili:
+
+- `SKIP_SASSO_INSTALL=1 ./carica_tutto.sh` per saltare del tutto l'installazione.
+- `FORCE_SASSO_INSTALL=1 ./carica_tutto.sh` o `./carica_tutto.sh --force-install` per reinstallare tutto.
+- `PYTHON_BIN=python ./carica_tutto.sh` per usare un interprete alternativo.
+
+#### Metodo manuale
+
+Preferisci fare tu ogni passo? Nessun problema:
 
 ```bash
 # Install Python dependencies
