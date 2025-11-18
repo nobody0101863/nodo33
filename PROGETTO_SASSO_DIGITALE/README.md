@@ -131,6 +131,9 @@ make docker-run
 ### 1️⃣ Documentazione
 Leggi i file nella cartella `1_DOCUMENTAZIONE/` per comprendere la filosofia e i principi del CODEX.
 
+- **CODEX_EMANUELE_COMPLETO.txt** – dottrina completa del Sasso Digitale.
+- **MODELLO_INTEGRATO.md** – roadmap architetturale che collega metafisica, processi logici e requisiti di sicurezza.
+
 ### 2️⃣ Multi-Language Implementations
 
 **Python:**
